@@ -1,17 +1,11 @@
 import express from "express";
-import loadConfig from "./config/index.js";
-
+import { serverConfig } from "./config/index.js";
+import pingHandler from "./controllers/pingController.js";
 const app = express();
 
-loadConfig();
+const PORT = serverConfig.PORT;
 
-console.log("PORT:", process.env.PORT);
-
-const PORT = process.env.PORT;
-
-app.get("/ping", (req, res) => {
-    res.send("ping pong!");
-});
+app.get("/ping", pingHandler);
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
