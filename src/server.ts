@@ -1,9 +1,16 @@
 import express from "express";
+import loadConfig from "./config/index.js";
 
 const app = express();
-const PORT = 3000;
+
+loadConfig();
+
+console.log("PORT:", process.env.PORT);
+
+const PORT = process.env.PORT;
+
 app.get("/ping", (req, res) => {
-    res.send("pong!");
+    res.send("ping pong!");
 });
 
 app.listen(PORT, () => {
