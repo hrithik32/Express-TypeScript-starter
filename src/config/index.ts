@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 
 function loadEnv() {
     dotenv.config();
-    console.log("Environment variables loaded successfully.");
+    // console.log("Environment variables loaded successfully.");
 }
 loadEnv();
 

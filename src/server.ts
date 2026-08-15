@@ -5,6 +5,8 @@ import v2Router from "./routers/v2/index.route.js";
 
 const app = express();
 
+app.use(express.json());
+
 const PORT = serverConfig.PORT;
 
 app.use("/api/v1", v1Router);
