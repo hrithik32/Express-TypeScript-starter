@@ -1,4 +1,4 @@
-import express from "express";  
+import express from "express";
 import pingRouter from "./ping.route.js";
 
 const v1Router = express.Router();
